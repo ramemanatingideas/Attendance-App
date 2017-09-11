@@ -1,9 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.amritaattendanceapp.FacultyDetails">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/faculty_image"
+        android:src="@drawable/r_image"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/name_field"
+        android:layout_toRightOf="@+id/faculty_image"
+        android:layout_marginLeft="70dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/faculty_image"
+        android:layout_marginLeft="10dp"
+        android:text="Name"
+        android:id="@+id/Name_view"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/faculty_image"
+        android:layout_below="@+id/Name_view"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:text="Department"
+        android:textSize="16sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/faculty_dept_text"
+        android:layout_below="@+id/name_field"
+        android:layout_toRightOf="@+id/faculty_image"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Submit"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/goBack"
+        />
+
+</RelativeLayout>
