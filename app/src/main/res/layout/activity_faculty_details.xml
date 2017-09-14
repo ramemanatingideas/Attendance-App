@@ -5,53 +5,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.android.amritaattendanceapp.FacultyDetails">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/faculty_image"
-        android:src="@drawable/r_image"
 
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:id="@+id/name_field"
-        android:layout_toRightOf="@+id/faculty_image"
-        android:layout_marginLeft="70dp"
-        />
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/faculty_image"
-        android:layout_marginLeft="10dp"
-        android:text="Name"
-        android:id="@+id/Name_view"
-        android:textSize="16sp"
-        />
+        android:id="@+id/image_layout"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/faculty_image"
+            android:src="@drawable/r_image"
 
-    <TextView
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/faculty_image"
-        android:layout_below="@+id/Name_view"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:text="Department"
-        android:textSize="16sp"
-        />
-    <TextView
+        android:layout_toRightOf="@id/image_layout"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:text="Name"
+            android:id="@+id/Name_view"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/name_field"
+            android:layout_toRightOf="@id/Name_view"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/department_text"
+            android:layout_below="@+id/Name_view"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Department"
+            android:textSize="16sp"
+            />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:id="@+id/faculty_dept_text"
+            android:layout_below="@+id/name_field"
+            android:layout_toRightOf="@+id/department_text"
+            android:layout_marginTop="10dp"
+            />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_vertical_list"
+        android:layout_below="@id/image_layout"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:id="@+id/faculty_dept_text"
-        android:layout_below="@+id/name_field"
-        android:layout_toRightOf="@+id/faculty_image"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="10dp"
-        />
+        android:layout_height="wrap_content"
+        android:orientation = "vertical"
+        >
+    </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_layout"
+            android:id="@+id/list_item_layout"
+            >
+            <ListView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_item"
+                >
+
+            </ListView>
+        </RelativeLayout>
+
+
+
+
 
     <Button
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
