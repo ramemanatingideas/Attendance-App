@@ -23,11 +23,29 @@ public class FacultyDetails extends AppCompatActivity {
         Classlist.add(new ClassList("2","CSE","A",false));
         Classlist.add(new ClassList("3","ECE","B",false));
         Classlist.add(new ClassList("1","MEE","C",false));
+        Classlist.add(new ClassList("4","CHE","E",false));
+        Classlist.add(new ClassList("2","CSE","A",false));
+        Classlist.add(new ClassList("3","ECE","B",false));
+        Classlist.add(new ClassList("1","MEE","C",false));
+        Classlist.add(new ClassList("4","CHE","E",false));
+        Classlist.add(new ClassList("2","CSE","A",false));
+        Classlist.add(new ClassList("3","ECE","B",false));
+        Classlist.add(new ClassList("1","MEE","C",false));
+        Classlist.add(new ClassList("4","CHE","E",false));
+        Classlist.add(new ClassList("2","CSE","A",false));
+        Classlist.add(new ClassList("3","ECE","B",false));
+        Classlist.add(new ClassList("1","MEE","C",false));
+        Classlist.add(new ClassList("4","CHE","E",false));
 
         ClassListAdapter adapter = new ClassListAdapter(this,Classlist);
         ListView ls = (ListView)findViewById(R.id.list_item);
         ls.setAdapter(adapter);
 
+        Utility.setListViewHeightBasedOnChildren(ls);
+
+        Button submit = (Button)findViewById(R.id.goBack);
+
+        
 
 
         go_back.setOnClickListener(new View.OnClickListener() {
