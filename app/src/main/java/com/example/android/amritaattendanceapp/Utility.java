@@ -1,14 +1,9 @@
 package com.example.android.amritaattendanceapp;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-
 /**
  * Created by rando51 on 15/9/17.
  */
-
+/*
 
     public class Utility {
         public static void setListViewHeightBasedOnChildren(ListView listView) {
@@ -32,4 +27,5 @@ import android.widget.ListView;
             listView.requestLayout();
         }
     }
+    */
 

@@ -18,6 +18,7 @@ public class FacultyDetails extends AppCompatActivity {
         setContentView(R.layout.activity_faculty_details);
 
         go_back = (Button)findViewById(R.id.goBack);
+       // go_back.setVisibility(View.GONE);
 
         ArrayList<ClassList> Classlist = new ArrayList<ClassList>();
         Classlist.add(new ClassList("2","CSE","A",false));
@@ -41,11 +42,16 @@ public class FacultyDetails extends AppCompatActivity {
         ListView ls = (ListView)findViewById(R.id.list_item);
         ls.setAdapter(adapter);
 
-        Utility.setListViewHeightBasedOnChildren(ls);
+        //Utility.setListViewHeightBasedOnChildren(ls);
 
-        Button submit = (Button)findViewById(R.id.goBack);
 
-        
+
+//        if (ls.getLastVisiblePosition() == ls.getAdapter().getCount() -1 &&
+//                ls.getChildAt(ls.getChildCount() - 1).getBottom() <= ls.getHeight())
+//        {
+//            It is scrolled all the way down here
+//            go_back.setVisibility(View.VISIBLE);
+//        }
 
 
         go_back.setOnClickListener(new View.OnClickListener() {
