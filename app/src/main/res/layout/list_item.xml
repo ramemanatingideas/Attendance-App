@@ -26,26 +26,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Department"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="5dp"
                 android:id="@+id/dept"
                 />
 
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:text="Year"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/dept"
                 android:id="@+id/year"
                 />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:text="Section"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/year"
                 android:id="@+id/section"
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/section"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="10dp"
                 android:id="@+id/check_button_class"
                 />
 
