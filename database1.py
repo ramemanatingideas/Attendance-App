@@ -17,7 +17,7 @@ class Teacher(Base):
 
 
 class Student(Base):
-    __tablename__ = 'student'c
+    __tablename__ = 'student'
 
     name = Column(String(80), nullable=False)
     id = Column(Integer, primary_key=True)

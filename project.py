@@ -1,12 +1,42 @@
-from flask import Flask
-app = Flask(__name__)
+import os
+import sys
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
+from sqlalchemy import create_engine
+
+Base = declarative_base()
 
 
-@app.route('/')
-@app.route('/hello')
-def helloworld():
-    return "Hello World"
+class Teacher(Base):
+    __tablename__ = 'teacher'
+    username = Column(String(250), nullable=False)
+    password = Column(String(250), nullable=False)
+    id = Column(Integer, primary_key=True)
+    name = Column(String(250), nullable=False)
 
-if __name__ == '__main__':
-    app.debug = True
-    app.run(host='0.0.0.0', port=5000)
+
+class Student(Base):
+    __tablename__ = 'student'
+
+    name = Column(String(80), nullable=False)
+    id = Column(Integer, primary_key=True)
+    course = Column(String(250))
+    class_id = Column(Integer, ForeignKey('teacher.id'))
+    teacher = relationship(Teacher)
+
+class Classes(Base):
+     __tablename__ = 'classes'
+
+     branch = Column(String(80), nullable=False)
+     section = Column(String(80))
+     year = Column(Integer,primary_key=True)
+     teacher_id = Column(Integer, ForeignKey('teacher.id'))
+     teachers = relationship(Teacher)
+engine = create_engine('sqlite:///attendancee.db')
+Base.metadata.create_all(engine)
+
+engine = create_engine('sqlite:///attendance.db')
+
+
+Base.metadata.create_all(engine)
