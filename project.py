@@ -16,6 +16,18 @@ class Teacher(Base):
     name = Column(String(250), nullable=False)
 
 
+    @property
+    def serialize(self):
+        return {
+            'username': self.username,
+            'password': self.password,
+            'id': self.id,
+            'name': self.name,
+
+
+        }
+
+
 class Classes(Base):
     __tablename__ = 'classes'
 
@@ -28,8 +40,26 @@ class Classes(Base):
     teacher_id3 = Column(Integer, ForeignKey('teacher.id'))
     teacher_id4 = Column(Integer, ForeignKey('teacher.id'))
     teacher_id5 = Column(Integer, ForeignKey('teacher.id'))
-    teacher = relationship(Teacher)
+    teacher1 = relationship("Teacher", foreign_keys=[teacher_id1])
+    teacher2 = relationship("Teacher", foreign_keys=[teacher_id2])
+    teacher3 = relationship("Teacher", foreign_keys=[teacher_id3])
+    teacher4 = relationship("Teacher", foreign_keys=[teacher_id4])
+    teacher5 = relationship("Teacher", foreign_keys=[teacher_id5])
 
+    @property
+    def serialize(self):
+        return {
+            'sno': self.sno,
+            'branch': self.branch,
+            'section':self.section,
+            'semester': self.Semester,
+            'teacher_id1': self.teacher_id1,
+            'teacher_id2': self.teacher_id2,
+            'teacher_id3': self.teacher_id3,
+            'teacher_id4': self.teacher_id4,
+            'teacher_id5': self.teacher_id5,
+
+        }
 
 
 class Student(Base):
@@ -53,9 +83,29 @@ class Student(Base):
     dec = Column(String(31))
     classes = relationship(Classes)
 
+    @property
+    def serialize(self):
+        return {
+            'name': self.name,
+            'course': self.course,
+            'id': self.id,
+            'class_id': self.class_id,
+            'jan': self.jan,
+            'feb': self.feb,
+            'march': self.march,
+            'april': self.april,
+            'may': self.may,
+            'june': self.june,
+            'july': self.july,
+            'aug': self.aug,
+            'sept': self.sept,
+            'oct': self.oct,
+            'nov': self.nov,
+            'dec': self.dec,
+
+        }
+
 
 engine = create_engine('sqlite:///attendancee.db')
 
 Base.metadata.create_all(engine)
-
-
