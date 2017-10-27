@@ -22,14 +22,13 @@ def login():
         if query:
             result = s.query(Teacher).filter_by(password=data['password']).first()
             if(result):
-                value=1
-                return jsonify(value)
+                id1=result.id
+                return jsonify({"value":id1})
             else:
-                value=0
-                return jsonify(value)
+
+                return jsonify({"value":0})
         else:
-            value=0
-            return jsonify(value)
+            return jsonify({"value":0})
 
 @app.route('/classlist/<int:tid>')
 def listclass(tid):
