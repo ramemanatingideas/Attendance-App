@@ -45,6 +45,17 @@ def studlist(cid):
     student=s.query(Student).filter_by(class_id=cid).all()
     return jsonify(std=[i.serialize for i in student])
 
+@app.route("/attendance/<int:sid>/<int:response>")
+def update(sid,response):
+    student=s.query(Student).filter_by(id=sid).first()
+    student.total_classes=student.total_classes+1
+    if(response):
+          student.cls_attendend=student.cls_attendend+1
+          s.add(student)
+          s.commit
+    return jsonify(student.serialize)
+
+
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0', port=2000)
