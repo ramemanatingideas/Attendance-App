@@ -50,15 +50,16 @@
                 android:layout_weight="1"
                 android:text="Section" />
 
-          <RadioGroup
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content">
+
             <RadioButton
                 android:id="@+id/radioButton"
                 android:layout_width="70dp"
                 android:layout_marginLeft="5dp"
-                android:layout_height="wrap_content" />
-          </RadioGroup>
+                android:layout_height="wrap_content"
+                android:onClick="onClickRadioButton"
+                />
+
+
         </LinearLayout>
 
 

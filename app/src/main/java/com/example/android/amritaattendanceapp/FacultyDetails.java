@@ -4,11 +4,11 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -95,6 +95,7 @@ public class FacultyDetails extends AppCompatActivity {
         //Name_Field  = (TextView)findViewById(R.id.Name_view);
 
 
+
         go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,6 +103,29 @@ public class FacultyDetails extends AppCompatActivity {
                 after_submit();
             }
         });
+    }
+
+    RadioButton listRadioButton = null;
+    int listIndex = -1;
+
+    public void onClickRadioButton(View v) {
+        View vMain = ((View) v.getParent());
+        // getParent() must be added 'n' times,
+        // where 'n' is the number of RadioButtons' nested parents
+        // in your case is one.
+
+        // uncheck previous checked button.
+        if (listRadioButton != null) listRadioButton.setChecked(false);
+        // assign to the variable the new one
+        listRadioButton = (RadioButton) v;
+        // find if the new one is checked or not, and set "listIndex"
+        if (listRadioButton.isChecked()) {
+            listIndex = ((ViewGroup) vMain.getParent()).indexOfChild(vMain);
+            Log.v(LOG_TAG,String.valueOf(listIndex));
+        } else {
+            listRadioButton = null;
+            listIndex = -1;
+        }
     }
 
     void setClassListAdapter(List<ClassList>classes)

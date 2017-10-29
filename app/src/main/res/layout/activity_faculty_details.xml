@@ -160,7 +160,7 @@
                 android:layout_weight="1"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"
-
+                android:choiceMode="singleChoice"
                 >
 
             </ListView>
