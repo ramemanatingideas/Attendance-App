@@ -69,8 +69,9 @@ class Student(Base):
     id = Column(Integer, primary_key=True)
     course = Column(String(250))
     class_id = Column(Integer, ForeignKey('classes.sno'))
-    cls_attendend = Column(Integer,default=0)
-    total_classes = Column(Integer,default=0)
+    cls_attendend = Column(Integer)
+    total_classes = Column(Integer)
+    percentage = Column(Integer)
     jan = Column(String(31))
     feb = Column(String(29))
     march = Column(String(31))
@@ -104,8 +105,9 @@ class Student(Base):
             'oct': self.oct,
             'nov': self.nov,
             'dec': self.dec,
-            'cls_attended': self.cls_attendend,
+            'cls_attendend': self.cls_attendend,
             'total_classes' : self.total_classes,
+            'percentage': self.percentage,
         }
 
 
